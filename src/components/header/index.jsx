@@ -4,6 +4,11 @@ import './style.css';
 import Navigation from '../navigation/index';
 
 class Header extends Component {
+
+  constructor(props){
+    super(props)
+  }
+
   render() {
     return (
       <div className="navbar">
@@ -14,7 +19,7 @@ class Header extends Component {
             <span className="icon-search search-icon"></span>    
           </div>      
         </div>
-        <Navigation/>
+        <Navigation islogin={this.props.islogin}/>
       </div>
     )
   }

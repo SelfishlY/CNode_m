@@ -3,6 +3,8 @@ import './style.css';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as UserInfoActions from '../../actions/actions';
+import { postAccessToken} from '../../fetch/accesstoken/index';
+import { history} from 'react-router-dom'
 
 class Login extends Component {
 
@@ -43,13 +45,30 @@ class Login extends Component {
   // 获取AccessToken
   hasAccessToken(){
     this.isCaveat();
-    if(this.state.value == ''){
+    if(this.state.value === ''){
       return
     }
-    // 将AccessToken存储到Redux中
-    this.props.UserAccAction.updata({
-      userAccessToken: this.state.value
+    // 获取数据
+    var result = postAccessToken({ accesstoken: this.state.value });
+    result.then((res) =>{
+      return res.json()
+    }).then((resJson) =>{
+      if (resJson.success){
+        // 将AccessToken和用户信息存储到Redux中
+        this.props.UserAccAction.updata({
+          userAccessToken: this.state.value,
+          userinfo: resJson
+        })
+        this.props.history.push('/user/' + resJson.loginname);
+      }else{
+        this.setState({
+          caveat: 'accesstoken错误'
+        })
+      }
+      
     })
+    
+
   }
 
   // 判断是否显示警告框
