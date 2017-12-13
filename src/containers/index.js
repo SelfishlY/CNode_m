@@ -24,7 +24,7 @@ class Index extends Component {
         <div style={{height: '100%'}}>
           {
             this.state.keys.length > 0
-            ? <Header islogin={true}/>
+              ? <Header islogin={true} userName={this.props.login.userinfo.loginname}/>
             : <Header islogin={false}/>
           }
           <Route exact path="/" component={Home} />
