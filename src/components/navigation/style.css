@@ -1,3 +1,8 @@
 .navlist {
   padding: 15px;
+  color: #ffffff;
+}
+
+.navUl {
+  margin-top: 24px;
 }

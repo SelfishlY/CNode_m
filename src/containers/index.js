@@ -3,8 +3,8 @@ import About from './about/index';
 import Home from './home/index';
 import Login from './login/index';
 import Messages from './messages/index';
-import NoFouned from './404';
-import { BrowserRouter, Router, HashRouter, Match, Route, Link, IndexLink } from 'react-router-dom';
+// import NoFouned from './404';
+import {HashRouter, Route} from 'react-router-dom';
 import Header from '../components/header/index';
 
 class Index extends Component {
@@ -12,7 +12,7 @@ class Index extends Component {
   render() {
     return (
       <HashRouter>
-        <div>
+        <div style={{height: '100%'}}>
           <Header />          
           <Route exact path="/" component={Home} />
           <Route path="/login" component={Login} />

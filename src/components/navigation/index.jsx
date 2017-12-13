@@ -5,13 +5,11 @@ import './style.css';
 class Navigation extends Component{
   render(){
     return(
-      <div>
-        <ul className="clear-fix">
-          <li className="float-left navlist"><Link to="/">首页</Link></li>
-          <li className="float-left navlist"><Link to="/">新手入门</Link></li>
-          <li className="float-left navlist"><Link to="/about">关于</Link></li>
-          <li className="float-left navlist"><Link to="/login">登录</Link></li>
-        </ul>
+      <div className="navUl">
+        <Link to="/" className="navlist">首页</Link>
+        <Link to="/messages" className="navlist">新手入门</Link>
+        <Link to="/about" className="navlist">关于</Link>
+        <Link to="/login" className="navlist">登录</Link>
       </div>
     )
   }
