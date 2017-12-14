@@ -4,11 +4,11 @@ import Home from './home/index';
 import Login from './login/index';
 import Messages from './messages/index';
 // import NoFouned from './404';
-import {HashRouter, Route} from 'react-router-dom';
+import { HashRouter, Route} from 'react-router-dom'
 import Header from '../components/header/index';
 import User from './user/index';
 import {connect} from 'react-redux';
-
+import Details from './Details/index';
 
 class Index extends Component {
   constructor(props,context){
@@ -20,7 +20,7 @@ class Index extends Component {
 
   render() {
     return (
-      <HashRouter>
+      <HashRouter history={this.props.history}>
         <div style={{height: '100%'}}>
           {
             this.state.keys.length > 0
@@ -32,6 +32,7 @@ class Index extends Component {
           <Route path="/about" component={About} />
           <Route path="/messages" component={Messages} />
           <Route path="/user/:name" component={User}/>
+          <Route path="/details/:id" component={Details}/>
         </div>
       </HashRouter>
     )

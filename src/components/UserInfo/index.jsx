@@ -13,19 +13,30 @@ class UserInfo extends Component {
         const data = this.props.data;
         return (
             <div className="userinfo clear-fix">
-                <div className="float-left">
+                <div className="float-left userTou">
                     <img src={data.data.avatar_url} alt="" />
                 </div>
-                <div className="usertitle">{data.data.githubUsername}</div>    
-                <div className="usertitle">积分:{data.data.score}</div>            
-                <div className="usertitle">创建时间:{data.data.create_at}</div>
-                <div>最近的回复</div>
+                <div>
+                    <div className="usertitle">{data.data.githubUsername}</div>
+                    <div className="usertitle">积分:{data.data.score}</div>
+                    <div className="usertitle">创建时间:{data.data.create_at}</div>
+                </div>
+                <div className="replies">
+                    <h2>最近的回复</h2>
                 {
                     data.data.recent_replies.map((item,index) =>{
-                        console.log(item.author.avatar_url)
                         return <List userdata={item} key={index}/>
                     })
                 }
+                </div>
+                <div className="topics">
+                    <h2>最近的话题</h2>
+                    {
+                        data.data.recent_topics.map((item,index) =>{
+                            return <List userdata={item} key={index}/>
+                        })
+                    }
+                </div>
                 {/* <div>最近的话题: {data.data.recent_topics.length}</div> */}
             </div>
         )

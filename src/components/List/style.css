@@ -1,6 +1,7 @@
 .list {
   border-bottom: 1px solid #eeeeee;
   position: relative;
+  margin-top: 10px;
 }
 
 .list img {
@@ -8,9 +9,16 @@
   height: 40px;
 }
 
-.list a {
+.list .title {
   position: absolute;
   top: 10px;
   margin-left: 5px;
+  color: #6699FF;
+}
+
+.list .time {
+  position: absolute;
+  right: 0;
+  top: 10px;
   color: #6699FF;
 }
