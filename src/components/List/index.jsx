@@ -14,7 +14,9 @@ class List extends Component {
         const userdata = this.props.userdata;
         return (
             <div className="clear-fix list">
-                <div className="float-left"><img src={userdata.author.avatar_url} alt="" /></div>
+                <Link to={"/user/" + userdata.author.loginname}>
+                    <div className="float-left"><img src={userdata.author.avatar_url} alt="" /></div>
+                </Link>
                 <Link to={"/details/" + userdata.id} id={userdata.id} className="title">{userdata.title}</Link>
                 <div className="time">{this.state.time}</div>
             </div>

@@ -25,7 +25,7 @@ class UserInfo extends Component {
                     <h2>最近的回复</h2>
                 {
                     data.data.recent_replies.map((item,index) =>{
-                        return <List userdata={item} key={index}/>
+                            return <List userdata={item} key={index}/>
                     })
                 }
                 </div>

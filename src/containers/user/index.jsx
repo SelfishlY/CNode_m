@@ -33,7 +33,6 @@ class User extends Component {
             this.setState({
                 data: resJson
             })
-            console.log(resJson)
         })
     }
 }

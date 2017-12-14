@@ -1,0 +1,39 @@
+.homelist {
+  height: 50px;
+  position: relative;
+  margin-top: 2px;
+  background: #ffffff;
+}
+
+.homelist a {
+  display: inline-block;
+}
+
+.homelist .homelist-img {
+  width: 30px;
+  height: 30px;
+  margin-top: 12px;
+  margin-left: 5px;
+}
+
+.homelist .homelist-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.homelist .homelist-title {
+  position: absolute;
+  top: 18px;
+  left: 50px;
+  display: inline-block;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.homelist .homelist-time {
+  position: absolute;
+  right: 5px;
+  top: 17px;
+}
