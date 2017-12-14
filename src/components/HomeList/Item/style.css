@@ -23,7 +23,7 @@
 
 .homelist .homelist-title {
   position: absolute;
-  top: 18px;
+  top: 10px;
   left: 50px;
   display: inline-block;
   max-width: 200px;
@@ -32,8 +32,31 @@
   white-space: nowrap;
 }
 
+.homelist .homelist-title .list-count span {
+  font-size: 12px;
+  color: #b4b4b4;
+}
+
 .homelist .homelist-time {
   position: absolute;
   right: 5px;
   top: 17px;
+}
+
+.sign-color {
+  color: #ffffff;
+  background: #6699CC;
+  font-size: 12px;
+  padding: 2px 3px;
+  border-radius: 5px;
+  margin-right: 7px;
+}
+
+.sign-nocolor {
+  color: #ffffff;
+  background: #999;
+  font-size: 12px;
+  padding: 2px 3px;
+  border-radius: 5px;
+  margin-right: 7px;
 }

@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import './style.css';
 
 class HomeNav extends Component{
     constructor(props){
@@ -7,7 +8,7 @@ class HomeNav extends Component{
 
     render(){
         return(
-            <div>
+            <div className="homenva">
                 <a href="">全部</a>
                 <a href="">精华</a>
                 <a href="">分享</a>
