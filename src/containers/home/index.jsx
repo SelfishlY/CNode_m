@@ -26,7 +26,7 @@ class Home extends Component {
               ? <HomeList data={this.state.data}/>
               : <div>加载中...</div>
           }
-          <LoadMore isloadmore={this.state.isloadmore} hasLoadMore={this.loadMore}/>
+          <LoadMore isloadmore={this.state.isloadmore} hasLoadMore={this.hasLoadMore}/>
         </div>
       )
     }
@@ -59,14 +59,13 @@ class Home extends Component {
     }
 
     // 加载更多
-    loadMore = () =>{
+    hasLoadMore = () =>{
       this.setState({
         isloadmore: false
       })
 
       this.setState({
-        page: this.state.page+1,
-        isloadmore: true
+        page: this.state.page+1
       },() =>{
         console.log(this.state.page)
         var page = this.state.page;
@@ -95,7 +94,8 @@ class Home extends Component {
         return res.json()
       }).then((resJson) => {
         this.setState({
-          data: this.state.data.concat(resJson.data)
+          data: this.state.data.concat(resJson.data),
+          isloadmore:true
         })
       })
     }

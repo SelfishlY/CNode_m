@@ -1,9 +1,13 @@
 import React,{ Component } from 'react';
+import Loading from '../../components/Loading/index';
 
 class About extends Component {
   render() {
     return (
-      <div>About</div>
+      <div>
+        <span>About</span>
+        <Loading/>
+      </div>
     )
   }
 }

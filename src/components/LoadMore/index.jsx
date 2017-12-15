@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import './style.css';
+import Loading from '../Loading/index';
 
 class LoadMore extends Component{
 
@@ -9,24 +10,40 @@ class LoadMore extends Component{
 
     render(){
         return(
-            <div className="loadmore">
+            <div className="loadmore" ref="wrapper">
                 {
                     this.props.isloadmore
-                        ? <button onClick={this.props.hasLoadMore}>加载更多</button>
-                        : <button>加载中</button>
+                    ? <span></span>
+                    : <Loading/>
                 }
             </div>
         )
     }
 
-    // componentDidMount(){
+    componentDidMount(){
+        //下拉列表加载更多
+        const hasLoadMore = this.props.hasLoadMore;
+        const wrapper = this.refs.wrapper;
+        let timeoutId;  //节流阀
+        function callback(){
+            const top = wrapper.getBoundingClientRect().top;
+            const windowHeight = window.screen.height;
+            if(top && top < windowHeight){
+                hasLoadMore();
+            }
+        }
+        
 
-    //     window.addEventListener('scoll', () =>{
-    //         console.log(223213)
-    //     },false)
-
-    //     console.log(!this.props.isloadmore)
-    // }
+        window.addEventListener('scroll', () =>{
+            if(!this.props.isloadmore){
+                return
+            }
+            if(timeoutId){
+                clearTimeout(timeoutId);
+            }
+            timeoutId=setTimeout(callback,50);
+        },false)
+    }
 }
 
 export default LoadMore;
