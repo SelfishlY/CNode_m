@@ -15,6 +15,7 @@ class HomeListItem extends Component {
     render() {
         const data = this.props.data;
         const name = data.author.loginname;
+        const id = data.id;
         return (
             <div className="homelist">
                 <Link to={"/user/" + name} className="clear-fix">
@@ -22,7 +23,7 @@ class HomeListItem extends Component {
                         <img src={data.author.avatar_url} alt=""/>
                     </div>
                 </Link>
-                <Link to="/about" className="homelist-title">
+                <Link to={"/details/" + id} className="homelist-title">
                     <Sign tab={data.tab} top={data.top} good={data.good}/>
                     <span>{data.title}</span>
                     <div className="list-count">
