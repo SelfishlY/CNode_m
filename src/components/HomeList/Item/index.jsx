@@ -14,16 +14,16 @@ class HomeListItem extends Component {
 
     render() {
         const data = this.props.data;
-        console.log(data)
+        const name = data.author.loginname;
         return (
             <div className="homelist">
-                <Link to="/about" className="clear-fix">
+                <Link to={"/user/" + name} className="clear-fix">
                     <div className="homelist-img float-left">
                         <img src={data.author.avatar_url} alt=""/>
                     </div>
                 </Link>
                 <Link to="/about" className="homelist-title">
-                    <Sign tab={data.tab} top={data.top}/>
+                    <Sign tab={data.tab} top={data.top} good={data.good}/>
                     <span>{data.title}</span>
                     <div className="list-count">
                         <span>{data.reply_count}/</span>
