@@ -29,7 +29,8 @@
   left: 60px;
 }
 
-.commentItem .commentItem-title .userInfo .zan {
+.commentItem .commentItem-title .zan {
   position: absolute;
-  right: 20px;
+  right: 9px;
+  top: 17px;
 }

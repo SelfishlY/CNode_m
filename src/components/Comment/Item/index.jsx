@@ -25,8 +25,8 @@ class CommentItem extends Component{
                         <span>{data.author.loginname}</span>
                         <span>{this.state.time}</span>
                         <span>{lou + 1 + '楼'}</span>
-                        <span className="zan">{data.ups.length}个赞</span>
                     </div>
+                    <span className="zan">{data.ups.length}个赞</span>
                     <div dangerouslySetInnerHTML={{ __html: data.content }}></div>
                 </div>
             </div>
