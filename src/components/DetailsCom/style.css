@@ -1,4 +1,52 @@
+.detailsCom {
+  padding: 0 15px;
+}
+
 .detailsCom .details-title {
-  padding: 0 10px;
+  padding: 0 15px;
   margin-top: 20px;
+}
+
+.detailsCom .details-title .shoucang {
+  width: 70px;
+  height: 43px;
+  background: #6699CC;
+  text-align: center;
+  line-height: 43px;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 5px;
+  float: right;
+  margin-bottom: 10px;
+}
+
+.detailsCom .hrrr {
+  border-top: 1px solid #eeeeee;
+  margin-bottom: 10px;
+}
+
+.detailsCom .markdown-text img {
+  cursor: pointer;
+  height: auto;
+  max-width: 100%;
+}
+
+.detailsCom .markdown-text a {
+  color: #6699CC;
+}
+
+.detailsCom .markdown-text blockquote {
+  padding: 0 0 0 15px;
+  margin: 0 0 20px;
+  border-left: 5px solid #eee;
+}
+
+.detailsCom .markdown-text h2 {
+  font-size: 26px;
+  margin: 30px 0 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.detailsCom .markdown-text strong {
+  font-weight: 700px;
 }
