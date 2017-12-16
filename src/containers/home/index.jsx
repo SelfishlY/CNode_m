@@ -4,6 +4,9 @@ import HomeList from '../../components/HomeList/index';
 import HomeNav from '../../components/HomeNva/index';
 import './style.css';
 import LoadMore from '../../components/LoadMore/index';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as UserInfoActions from '../../actions/actions';
 
 class Home extends Component {
 
@@ -21,11 +24,11 @@ class Home extends Component {
       return (
         <div className="home">
           <HomeNav modifyTab={this.modifyTab}/>
-          {
+          {/* {
             this.state.data.length>0
-              ? <HomeList data={this.state.data}/>
+              ? <HomeList data={this.props.homelistdata.HomeList}/>
               : <div>加载中...</div>
-          }
+          } */}
           <LoadMore isloadmore={this.state.isloadmore} hasLoadMore={this.hasLoadMore}/>
         </div>
       )
@@ -67,7 +70,6 @@ class Home extends Component {
       this.setState({
         page: this.state.page+1
       },() =>{
-        console.log(this.state.page)
         var page = this.state.page;
         var tab = this.state.tab;
         var limit = this.state.limit;
@@ -93,6 +95,11 @@ class Home extends Component {
       result.then((res) => {
         return res.json()
       }).then((resJson) => {
+        console.log(resJson.data)
+        this.props.HomeListAction.add_list({
+          HomeList:resJson.data
+        })
+
         this.setState({
           data: this.state.data.concat(resJson.data),
           isloadmore:true
@@ -101,4 +108,18 @@ class Home extends Component {
     }
 }
 
-export default Home;
+const mapStateToProps = (state) =>{
+  // console.log(state)
+  return{
+    homelistdata: state.HomeList
+  }
+}
+
+const mapDispatchToProps = (dispatch) =>{
+  return{
+    HomeListAction: bindActionCreators(UserInfoActions, dispatch)
+  }
+}
+
+// export default Home;
+export default connect(mapStateToProps, mapDispatchToProps)(Home)

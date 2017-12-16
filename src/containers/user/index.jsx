@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
 import {getUserInfo} from '../../fetch/user/index';
 import UserInfo from '../../components/UserInfo/index';
 
 
 class User extends Component {
-    constructor(props,context){
-        super(props,context);
+    constructor(props){
+        super(props);
         this.state = {
             data: false
         }
