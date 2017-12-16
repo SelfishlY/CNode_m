@@ -3,12 +3,16 @@ import Sign from '../../components/HomeList/Item/Sign';
 import './style.css';
 import Comment from '../Comment/index';
 import moment from 'moment';
+import Collection from '../Collection/index';
+import { collection } from '../../fetch/collection/index';
+import { nocollection } from '../../fetch/collection/index';
 
 class DetailsCom extends Component{
     constructor(props){
         super(props);
         this.state={
-            time: ''
+            time: '',
+            is_collect: false
         }
     }
 
@@ -30,7 +34,7 @@ class DetailsCom extends Component{
                         <span>来自分享</span> */}
                     </div>
                     <div className="clear-fix">
-                        <div className="shoucang">收藏</div>
+                        <Collection collect={this.state.is_collect} collection={this.collection} delcollection={this.delcollection}/>
                     </div>
                 </div>
                 <div className="hrrr"></div>
@@ -46,7 +50,42 @@ class DetailsCom extends Component{
         const now = new Date(this.props.data.create_at);
         const time = moment(now).fromNow();
         this.setState({
-            time: time
+            time: time,
+            is_collect: this.props.data.is_collect
+        })
+    }
+
+    // 收藏
+    collection = () => {
+
+        const topic_id = this.props.data.id;
+        const accesstoken = localStorage.accesstoken;
+        var result = collection({ topic_id: topic_id, accesstoken: accesstoken });
+        result.then((res) =>{
+            return res.json()
+        }).then((resJson) =>{
+            if(resJson.success){
+                this.setState({
+                    is_collect:true
+                })
+            }
+        })
+    }
+
+    // 取消收藏
+    delcollection = () => {
+        const topic_id = this.props.data.id;
+        const accesstoken = localStorage.accesstoken;
+        var result = nocollection({ topic_id: topic_id, accesstoken: accesstoken });
+        result.then((res) => {
+            return res.json()
+        }).then((resJson) => {
+            console.log(resJson)
+            if (resJson.success) {
+                this.setState({
+                    is_collect: false
+                })
+            }
         })
     }
 

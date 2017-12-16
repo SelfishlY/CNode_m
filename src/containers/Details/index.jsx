@@ -3,6 +3,7 @@ import { getDetailsData} from '../../fetch/details/index';
 import Loading from '../../components/Loading/index';
 import DetailsCom from '../../components/DetailsCom/index';
 
+
 class Details extends Component {
 
     constructor(props){
@@ -17,7 +18,7 @@ class Details extends Component {
             <div>
                 {
                     this.state.data
-                    ? <DetailsCom data={this.state.data}/>
+                        ? <DetailsCom data={this.state.data}/>
                     : <Loading/>
                 }
             </div>
@@ -25,8 +26,9 @@ class Details extends Component {
     }
 
     componentDidMount(){
-        const id = this.props.match.params.id
-        const result =  getDetailsData(id);
+        const id = this.props.match.params.id;
+        const accesstoken = localStorage.accesstoken || '';
+        const result = getDetailsData(id, accesstoken);
         result.then((res) =>{
             return res.json()
         }).then((resJson) =>{
@@ -35,7 +37,6 @@ class Details extends Component {
             })
         })
     }
-
 }
 
 export default Details;

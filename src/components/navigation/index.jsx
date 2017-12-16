@@ -7,7 +7,6 @@ class Navigation extends Component{
     super(props)
   }
   render(){
-    const userName = this.props.userName;
     return(
       <div className="navUl">
         {
@@ -18,7 +17,7 @@ class Navigation extends Component{
               <Link to="/messages" className="navlist">新手入门</Link>
               <Link to="/about" className="navlist">关于</Link>
               <Link to="/login" className="navlist">退出</Link>
-              <Link to={"/user/" + userName} className="navlist">用户信息</Link>
+              <Link to={"/user/" + localStorage.cnnodeUserName} className="navlist">用户信息</Link>
               <Link to="/news" className="navlist">未读消息</Link>
             </div>
           //未登录 

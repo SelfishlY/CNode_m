@@ -6,8 +6,10 @@ import Messages from './messages/index';
 // import NoFouned from './404';
 import { HashRouter, Route} from 'react-router-dom'
 import Header from '../components/header/index';
+import * as UserInfoActions from '../actions/actions';
 import User from './user/index';
 import {connect} from 'react-redux';
+import { bindActionCreators } from 'redux';
 import Details from './Details/index';
 
 class Index extends Component {
@@ -23,8 +25,8 @@ class Index extends Component {
       <HashRouter history={this.props.history}>
         <div style={{height: '100%'}}>
           {
-            this.state.keys.length > 0
-              ? <Header islogin={true} userName={this.props.login.userinfo.loginname}/>
+            localStorage.accesstoken
+            ? <Header islogin={true}/>
             : <Header islogin={false}/>
           }
           <Route exact path="/" component={Home} />
@@ -48,8 +50,10 @@ class Index extends Component {
     }
   }
   componentDidMount(){
-    this.setState({
-      keys:Object.keys(this.props.login)
+    // 将AccessToken和用户信息存储到Redux中
+    this.props.UserAccAction.updata({
+      userAccessToken: localStorage.accesstoken,
+      cnnodeUserName: localStorage.cnnodeUserName
     })
   }
 
@@ -57,12 +61,13 @@ class Index extends Component {
 
 const mapStateToProps = (state) =>{
   return{
-    login: state.login
   }
 }
 
 const mapDispatchToProps = (dispatch) =>{
-  return{}
+  return{
+    UserAccAction: bindActionCreators(UserInfoActions, dispatch)
+  }
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(Index)

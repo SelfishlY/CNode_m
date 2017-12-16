@@ -54,10 +54,13 @@ class Login extends Component {
       return res.json()
     }).then((resJson) =>{
       if (resJson.success){
-        // 将AccessToken和用户信息存储到Redux中
+        // 将accesstoken存储到localStorage()
+        localStorage.accesstoken = this.state.value;
+        localStorage.cnnodeUserName = resJson.loginname;
+        // 将AccessToken和用户信息存储到Redux中(第一次登录时手动存储,往后直接从localstorage中获取)
         this.props.UserAccAction.updata({
-          userAccessToken: this.state.value,
-          userinfo: resJson
+          userAccessToken: localStorage.accesstoken,
+          cnnodeUserName: localStorage.cnnodeUserName
         })
         this.props.history.push('/user/' + resJson.loginname);
       }else{
@@ -83,7 +86,6 @@ class Login extends Component {
       })
     }
   }
-
 }
 
 const mapStateToProps = (state) =>{
@@ -98,3 +100,4 @@ const mapDispatchToProps = (dispatch)=>{
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(Login);
+// export default Login;

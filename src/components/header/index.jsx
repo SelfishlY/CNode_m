@@ -11,7 +11,6 @@ class Header extends Component {
 
   render() {
     const islogin = this.props.islogin;
-    const userName = this.props.userName;
     return (
       <div className="navbar">
         <img src={logo} alt=""/>
@@ -21,7 +20,7 @@ class Header extends Component {
             <span className="icon-search search-icon"></span>    
           </div>      
         </div>
-        <Navigation islogin={islogin} userName={userName}/>
+        <Navigation islogin={islogin}/>
       </div>
     )
   }
