@@ -8,6 +8,10 @@ import { HashRouter, Route} from 'react-router-dom'
 import '../static/getType';
 import '../static/css/reset.css'
 
+// import { connect } from 'react-redux';
+// import { bindActionCreators } from 'redux';
+// import * as InitAction from '../Redux/Actions/actions';
+
 class App extends Component{
     render(){
         return(

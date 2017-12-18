@@ -1,42 +1,61 @@
 import React,{Component} from 'react';
 import HomeNav from './subpage/HomeNav';
 import './style.css';
-import {getHomeList} from '../../Fetch/HomeList/index';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as InitAction from '../../Redux/Actions/actions';
-import HomeList from './subpage/HomeList';
-
+import ItemList from '../../Components/ItemList/ItemList';
 
 
 class Home extends Component{
     render(){
-        // const data = this.props.HomeState.Home
-        // console.log(this.props.HomeState.Home.HomeData)
-        console.log(1)
+        const data = this.props.HomeState.HomeData
+        console.log(data)
         return(
-            <div>
+            <div>  
                 <HomeNav/>
-                <HomeList/>
+                <div>
+                    
+                    {
+                        data
+                        ? data.map((item,index) =>{
+                            return <ItemList data={item} key={index} />
+                        })
+                        : <span>加载中</span>
+                    }
+                    
+                </div>
+                <button onClick={this.onclickHandle}>点击</button>
             </div>
         )
     }
 
+
+    // 第一次获取数据
     componentDidMount(){
-        var result = getHomeList(1,'all',5);
-        result.then((res) =>{
-            return res.json()
-        }).then((resJson) =>{
-            this.props.HomeAction.Has_Data(resJson.data)
-            console.log(3)
-            console.log(this.props.HomeState.Home.HomeData)
-        })
+        this.getAjaxData()
+    }
+
+
+    // 点击加载更多
+    onclickHandle = () => {
+        this.getAjaxData()
+    }
+
+    getAjaxData = () =>{
+        const para = this.props.HomeState;
+        const page = para.page;
+        const tab = para.tab;
+        const limit = para.limit;
+        this.props.HomeAction.Has_Data(page, tab, limit)
     }
 }
 
+
+
 const mapStateToProps = (state) =>{
     return{
-        HomeState: state
+        HomeState: state.Home
     }
 }
 const mapDispatchToProps = (dispatch) =>{
@@ -45,4 +64,4 @@ const mapDispatchToProps = (dispatch) =>{
     }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
