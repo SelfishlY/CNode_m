@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as InitAction from '../../Redux/Actions/actions';
 import ItemList from '../../Components/ItemList/ItemList';
+import Loading from '../../Components/Loading/index';
 
 
 class Home extends Component{
@@ -15,15 +16,13 @@ class Home extends Component{
             <div>  
                 <HomeNav/>
                 <div>
-                    
                     {
-                        data
+                        data.length > 0
                         ? data.map((item,index) =>{
                             return <ItemList data={item} key={index} />
                         })
-                        : <span>加载中</span>
+                        : <Loading/>
                     }
-                    
                 </div>
                 <button onClick={this.onclickHandle}>点击</button>
             </div>
@@ -39,6 +38,8 @@ class Home extends Component{
 
     // 点击加载更多
     onclickHandle = () => {
+        // console.log(this.props.HomeAction)
+        this.props.HomeAction.MORE_PAGE()
         this.getAjaxData()
     }
 

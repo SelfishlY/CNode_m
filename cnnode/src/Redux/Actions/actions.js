@@ -2,12 +2,14 @@ import * as ActionType from '../ActionType/actionType';
 import {getHomeList} from '../../Fetch/HomeList/index';
 
 
-export const Set_State = (data) =>({
-    type: ActionType.SET_STATE,
+// 加载更多(page+1)
+export const MORE_PAGE = (data) =>({
+    type: ActionType.MORE_PAGE,
     data:data,
 })
 
 
+// 首页获取文章数据
 export const Has_Data = (page,tab,limit) =>{
     return async (dispatch) =>{
         await getHomeList(page, tab, limit).then((res) => {
