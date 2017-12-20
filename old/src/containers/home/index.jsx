@@ -21,14 +21,16 @@ class Home extends Component {
        }
     }
     render() {
+      console.log(this.state.data)
       return (
         <div className="home">
           <HomeNav modifyTab={this.modifyTab}/>
-          {/* {
+         {
             this.state.data.length>0
-              ? <HomeList data={this.props.homelistdata.HomeList}/>
+              ? <HomeList data={this.state.data}/>
               : <div>加载中...</div>
-          } */}
+         }
+        
           <LoadMore isloadmore={this.state.isloadmore} hasLoadMore={this.hasLoadMore}/>
         </div>
       )
@@ -96,9 +98,9 @@ class Home extends Component {
         return res.json()
       }).then((resJson) => {
         console.log(resJson.data)
-        this.props.HomeListAction.add_list({
-          HomeList:resJson.data
-        })
+        // this.props.HomeListAction.add_list({
+        //   HomeList:resJson.data
+        // })
 
         this.setState({
           data: this.state.data.concat(resJson.data),

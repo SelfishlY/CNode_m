@@ -1,12 +1,65 @@
-.HomeItem .item a {
-  display: inline-block;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  overflow: hidden;
+body {
+  background: #eeeeee;
 }
 
-.HomeItem .item a img {
+body #root .conent {
+  height: 100%;
+}
+
+body #root .conent .HomeItem {
+  border-bottom: 1px solid #eeeeee;
+  margin-top: 20px;
+  padding: 0 10px;
+}
+
+body #root .conent .HomeItem .item {
+  height: 80px;
+  position: relative;
+}
+
+body #root .conent .HomeItem .item i {
+  font-size: 45px;
+  position: absolute;
+  top: 10px;
+}
+
+body #root .conent .HomeItem .item a {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+body #root .conent .HomeItem .item a img {
   width: 100%;
   height: 100%;
+}
+
+body #root .conent .HomeItem .item .item-right {
+  display: inline-block;
+  margin-left: 65px;
+}
+
+body #root .conent .HomeItem .item .item-right .title {
+  color: #6699ff;
+}
+
+body #root .conent .HomeItem .item .item-right p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 465px;
+  font-size: 28px;
+}
+
+body #root .conent .HomeItem .item .item-right p span {
+  font-size: 24px;
+}
+
+body #root .conent .HomeItem .item .time {
+  position: absolute;
+  right: 0;
+  top: 20px;
 }

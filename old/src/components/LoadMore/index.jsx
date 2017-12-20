@@ -28,6 +28,8 @@ class LoadMore extends Component{
         function callback(){
             const top = wrapper.getBoundingClientRect().top;
             const windowHeight = window.screen.height;
+            console.log('top:'+top)
+            console.log('window:'+windowHeight)
             if(top && top < windowHeight){
                 hasLoadMore();
             }

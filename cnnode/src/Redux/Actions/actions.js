@@ -5,7 +5,7 @@ import {getHomeList} from '../../Fetch/HomeList/index';
 // 加载更多(page+1)
 export const MORE_PAGE = (data) =>({
     type: ActionType.MORE_PAGE,
-    data:data,
+    data
 })
 
 
@@ -21,5 +21,13 @@ export const Has_Data = (page,tab,limit) =>{
             })
         })
     }
+}
 
+// 修改loadmore组件的状态
+
+export const SET_ISLOADMORE = (data) =>{
+    return {
+        type: ActionType.SET_ISLOADMORE,
+        data
+    }
 }

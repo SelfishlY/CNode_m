@@ -6,25 +6,25 @@ import {bindActionCreators} from 'redux';
 import * as InitAction from '../../Redux/Actions/actions';
 import ItemList from '../../Components/ItemList/ItemList';
 import Loading from '../../Components/Loading/index';
+import Loadmore from '../../Components/Loadmore/index';
 
 
 class Home extends Component{
     render(){
-        const data = this.props.HomeState.HomeData
-        console.log(data)
+        const data = this.props.HomeState
         return(
-            <div>  
+            <div className="conent">  
                 <HomeNav/>
-                <div>
+                <div className="listBox">
                     {
-                        data.length > 0
-                        ? data.map((item,index) =>{
+                        data.HomeData.length > 0
+                        ? data.HomeData.map((item,index) =>{
                             return <ItemList data={item} key={index} />
                         })
                         : <Loading/>
                     }
                 </div>
-                <button onClick={this.onclickHandle}>点击</button>
+                <Loadmore isLoadmore={data.isLoadmore} onclickHandle={this.onclickHandle}/>
             </div>
         )
     }
@@ -36,13 +36,15 @@ class Home extends Component{
     }
 
 
-    // 点击加载更多
+    // 加载更多
     onclickHandle = () => {
-        // console.log(this.props.HomeAction)
-        this.props.HomeAction.MORE_PAGE()
+        this.props.HomeAction.SET_ISLOADMORE()
+        this.props.HomeAction.MORE_PAGE()        
         this.getAjaxData()
+        this.props.HomeAction.SET_ISLOADMORE()        
     }
 
+    // 获取数据
     getAjaxData = () =>{
         const para = this.props.HomeState;
         const page = para.page;
@@ -50,6 +52,7 @@ class Home extends Component{
         const limit = para.limit;
         this.props.HomeAction.Has_Data(page, tab, limit)
     }
+
 }
 
 
