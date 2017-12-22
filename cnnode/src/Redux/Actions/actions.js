@@ -1,5 +1,8 @@
 import * as ActionType from '../ActionType/actionType';
-import {getHomeList} from '../../Fetch/HomeList/index';
+import {
+    getHomeList,
+    getUserInfo
+} from '../../Fetch/HomeList/index';
 
 
 // 加载更多(page+1)
@@ -45,3 +48,18 @@ export const SWITCH_TYPE = (page, tab, limit) =>{
         })
     }
 } 
+
+
+// 获取用户信息
+export const GET_USERINFO = (name) =>{
+    return async(dispatch) =>{
+        await getUserInfo(name).then((res) =>{
+            return res.json()
+        }).then((resJson) =>{
+            dispatch({
+                type: ActionType.GET_USERINFO,
+                data:resJson.data
+            })
+        })
+    }
+}

@@ -1,0 +1,63 @@
+.UserInfo {
+  position: relative;
+  margin-top: 30px;
+  background: #ffffff;
+  padding-bottom: 30px;
+}
+
+.UserInfo .top {
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 140px;
+  margin-top: 22px;
+  margin-left: 50px;
+  border: 1px solid #fff;
+  display: inline-block;
+}
+
+.UserInfo .top img {
+  width: 100%;
+  height: 100%;
+}
+
+.UserInfo .username {
+  position: absolute;
+  top: 45px;
+  margin-left: 230px;
+  font-size: 28px;
+}
+
+.UserInfo .jifen {
+  position: absolute;
+  top: 80px;
+  margin-left: 230px;
+}
+
+.UserInfo .userTime {
+  position: absolute;
+  top: 100px;
+  margin-left: 230px;
+}
+
+.topic {
+  margin: 0 20px;
+}
+
+.topic h3 {
+  background: #666666;
+  padding: 20px 0;
+  color: #fff;
+  font-size: 25px;
+}
+
+.replies {
+  margin: 0 20px;
+}
+
+.replies h3 {
+  background: #666666;
+  padding: 20px 0;
+  color: #fff;
+  font-size: 25px;
+}

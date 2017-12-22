@@ -1,0 +1,26 @@
+.UserList {
+  height: 100px;
+  position: relative;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.UserList .userlist-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  top: 15px;
+}
+
+.UserList .userlist-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.UserList .userlist-title {
+  position: absolute;
+  margin-left: 100px;
+  top: 36px;
+  font-size: 25px;
+}

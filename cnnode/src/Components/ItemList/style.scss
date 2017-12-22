@@ -1,57 +1,50 @@
-body{
-    background: #eeeeee;
-    #root {
-        .conent {
-            height: 100%;
-            .HomeItem {
-                // border-top: 1px solid #eeeeee;
-                border-bottom: 1px solid #eeeeee;
-                margin-top: 20px;
-                padding: 0 10px;
-                .item {
-                    height: 80px;
-                    position: relative;
-                    i {
-                        font-size: 35px;
-                        position: absolute;
-                        top: 10px;
-                    }
-                    .user_link {
-                        display: inline-block;
-                        width: 60px;
-                        height: 60px;
-                        border-radius: 50%;
-                        overflow: hidden;
-                        margin-bottom: 10px;
-                        img {
-                            width: 100%;
-                            height: 100%;
-                        }
-                    }
-                    .item-right {
-                        display: inline-block;
-                        margin-left: 65px;
-                        .title {
-                            color: #6699ff;
-                        }
-                        p {
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                            white-space: nowrap;
-                            max-width: 465px;
-                            font-size: 28px;
-                            span {
-                                font-size: 24px;
-                            }
-                        }
-                    }
-                    .time {
-                        position: absolute;
-                        right: 0;
-                        top: 20px;
+
+    .HomeItem {
+        // border-top: 1px solid #eeeeee;
+        border-bottom: 1px solid #eeeeee;
+        margin-top: 20px;
+        padding: 0 10px;
+        .item {
+            height: 80px;
+            position: relative;
+            i {
+                font-size: 35px;
+                position: absolute;
+                top: 10px;
+            }
+            .user_link {
+                display: inline-block;
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                overflow: hidden;
+                margin-bottom: 10px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .item-right {
+                display: inline-block;
+                margin-left: 65px;
+                .title {
+                    color: #6699ff;
+                }
+                p {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    max-width: 465px;
+                    font-size: 28px;
+                    span {
+                        font-size: 24px;
                     }
                 }
             }
+            .time {
+                position: absolute;
+                right: 0;
+                top: 20px;
+            }
         }
     }
-}

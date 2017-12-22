@@ -4,3 +4,8 @@ export function getHomeList(page,tab,limit){
     var result = get('https://cnodejs.org/api/v1/topics?page='+page+'&tab='+tab+'&limit='+limit+'&mdrender=true' );
     return result;
 }
+
+export function getUserInfo(name){
+    var result = get('https://cnodejs.org/api/v1/user/'+name);
+    return result
+}

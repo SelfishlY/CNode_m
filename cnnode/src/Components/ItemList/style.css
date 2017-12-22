@@ -1,29 +1,21 @@
-body {
-  background: #eeeeee;
-}
-
-body #root .conent {
-  height: 100%;
-}
-
-body #root .conent .HomeItem {
+.HomeItem {
   border-bottom: 1px solid #eeeeee;
   margin-top: 20px;
   padding: 0 10px;
 }
 
-body #root .conent .HomeItem .item {
+.HomeItem .item {
   height: 80px;
   position: relative;
 }
 
-body #root .conent .HomeItem .item i {
+.HomeItem .item i {
   font-size: 35px;
   position: absolute;
   top: 10px;
 }
 
-body #root .conent .HomeItem .item .user_link {
+.HomeItem .item .user_link {
   display: inline-block;
   width: 60px;
   height: 60px;
@@ -32,21 +24,21 @@ body #root .conent .HomeItem .item .user_link {
   margin-bottom: 10px;
 }
 
-body #root .conent .HomeItem .item .user_link img {
+.HomeItem .item .user_link img {
   width: 100%;
   height: 100%;
 }
 
-body #root .conent .HomeItem .item .item-right {
+.HomeItem .item .item-right {
   display: inline-block;
   margin-left: 65px;
 }
 
-body #root .conent .HomeItem .item .item-right .title {
+.HomeItem .item .item-right .title {
   color: #6699ff;
 }
 
-body #root .conent .HomeItem .item .item-right p {
+.HomeItem .item .item-right p {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -54,11 +46,11 @@ body #root .conent .HomeItem .item .item-right p {
   font-size: 28px;
 }
 
-body #root .conent .HomeItem .item .item-right p span {
+.HomeItem .item .item-right p span {
   font-size: 24px;
 }
 
-body #root .conent .HomeItem .item .time {
+.HomeItem .item .time {
   position: absolute;
   right: 0;
   top: 20px;
