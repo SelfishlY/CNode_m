@@ -14,7 +14,7 @@ class Home extends Component{
         const data = this.props.HomeState
         return(
             <div className="conent">  
-                <HomeNav/>
+                <HomeNav switchType={this.switchType}/>
                 <div className="listBox">
                     {
                         data.HomeData.length > 0
@@ -36,6 +36,12 @@ class Home extends Component{
     }
 
 
+    // 获取数据
+    getAjaxData = () => {
+        const { page,tab,limit } = this.props.HomeState
+        this.props.HomeAction.Has_Data(page, tab, limit)
+    }
+
     // 加载更多
     onclickHandle = () => {
         this.props.HomeAction.SET_ISLOADMORE()
@@ -44,13 +50,11 @@ class Home extends Component{
         this.props.HomeAction.SET_ISLOADMORE()        
     }
 
-    // 获取数据
-    getAjaxData = () =>{
-        const para = this.props.HomeState;
-        const page = para.page;
-        const tab = para.tab;
-        const limit = para.limit;
-        this.props.HomeAction.Has_Data(page, tab, limit)
+    // 切换文章类型
+    switchType = (e) =>{
+        const tab = e.target.id
+        const {page,limit}  = this.props.HomeState;
+        this.props.HomeAction.SWITCH_TYPE(1,tab,limit)
     }
 
 }

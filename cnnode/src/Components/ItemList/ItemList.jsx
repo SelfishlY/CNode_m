@@ -1,12 +1,13 @@
 import React,{Component} from 'react';
 import './style.css';
 import Star from '../Star/index';
+import {Link} from 'react-router-dom';
 
 
 class ItemList extends Component{
     render(){
         const data = this.props.data;
-        console.log(data)
+        // console.log(data)
         const userName = data.author.loginname;     //名字
         const avatar_url = data.author.avatar_url;  //头像
         const id = data.id;                         //id
@@ -22,10 +23,10 @@ class ItemList extends Component{
         return(
             <div className="HomeItem">
                 <div className="item">
-                    <a><img src={avatar_url} alt=""/></a>
+                    <Link to={"/user/"+userName} className="user_link"><img src={avatar_url} alt="" /></Link>
                     <Star tab={tab} top={top} good={good}/>
                     <div className="item-right">
-                        <p className="title">{title}</p>
+                        <p className="title"><Link to={"/details/"+id}>{title}</Link></p>
                         <p>
                             <span>{reply_count}/{visit_count}</span>
                         </p>

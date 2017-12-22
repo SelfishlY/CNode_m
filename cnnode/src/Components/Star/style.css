@@ -1,9 +1,21 @@
 .HomeIcon {
   margin: 0 10px;
 }
-.isColor{
+.zhiding{
   color: red
 }
-.noColor{
-  color: #999;
+.fenxiang{
+  color: tomato;
+}
+.jinghua{
+  color: orange;
+}
+.job{
+  color: skyblue;
+}
+.dev{
+  color: turquoise;
+}
+.ask{
+  color: darkcyan;
 }
