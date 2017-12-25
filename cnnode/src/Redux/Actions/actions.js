@@ -1,7 +1,10 @@
 import * as ActionType from '../ActionType/actionType';
 import {
     getHomeList,
-    getUserInfo
+    getUserInfo,
+    getArticledetails,
+    collection,
+    nocollection
 } from '../../Fetch/HomeList/index';
 
 
@@ -59,6 +62,49 @@ export const GET_USERINFO = (name) =>{
             dispatch({
                 type: ActionType.GET_USERINFO,
                 data:resJson.data
+            })
+        })
+    }
+}
+
+// 获取文章详情
+export const GET_ARTICLE = (id) => {
+    return async (dispatch) => {
+        await getArticledetails(id).then((res) => {
+            return res.json()
+        }).then((resJson) => {
+            dispatch({
+                type: ActionType.GET_ARTICLE,
+                data: resJson.data
+            })
+        })
+    }
+}
+
+
+//收藏
+export const POST_COLLECT = (token,id) =>{
+    return async (dispatch) =>{
+        await collection(token,id).then((res) =>{
+            return res.json()
+        }).then((resJson) =>{
+            dispatch({
+                type:ActionType.POST_COLLECT,
+                data: resJson.data
+            })
+        })
+    }
+}
+
+//取消收藏
+export const POST_NOCOLLECT = (token,id) =>{
+    return async (dispatch) =>{
+        await nocollection(token,id).then((res) =>{
+            return res.json()
+        }).then((resJson) =>{
+            dispatch({
+                type:ActionType.POST_NOCOLLECT,
+                data: resJson.data
             })
         })
     }
