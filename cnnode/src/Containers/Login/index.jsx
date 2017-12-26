@@ -38,6 +38,7 @@ class Login extends Component{
             return
         }
         const token = this.state.value
+        localStorage.Accesstoken = token
         this.props.LoginAction.LOGIN({ accesstoken: token })
     }
 

@@ -9,11 +9,12 @@ import Loading from '../../Components/Loading/index';
 class Details extends Component {
     render() {
         const data = this.props.Article.DetaileData
+        const iscollect = this.props.Article.iscollect
         return (
             <div>
                 {
                     data
-                        ? <DetailsItem data={data} collect={this.collect}/>
+                        ? <DetailsItem data={data} iscollect={iscollect} collect={this.collect} nocollect={this.nocollect}/>
                         : <Loading/>
                 }
             </div>
@@ -23,13 +24,22 @@ class Details extends Component {
     componentDidMount(){
         console.log(this.props.ArticleAction)
         const id = this.props.match.params.id
-        this.props.ArticleAction.GET_ARTICLE(id)
+        const accesstoken = localStorage.Accesstoken || '';
+        this.props.ArticleAction.GET_ARTICLE(id,accesstoken)
     }
 
+    // 点击收藏
     collect = () =>{
-        const token = '240455cf-2881-4333-b823-0c1a99b8d55d';
+        const accesstoken = localStorage.Accesstoken
         const id = this.props.Article.DetaileData.id;
-        this.props.ArticleAction.POST_COLLECT(token,id)
+        this.props.ArticleAction.POST_COLLECT({ topic_id:id,accesstoken:accesstoken })
+    }
+
+    // 取消收藏
+    nocollect = () =>{
+        const accesstoken = localStorage.Accesstoken
+        const id = this.props.Article.DetaileData.id;
+        this.props.ArticleAction.POST_NOCOLLECT({ topic_id: id, accesstoken: accesstoken })
     }
 
 }

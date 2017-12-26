@@ -2,7 +2,7 @@ import * as ActionType from '../ActionType/actionType';
 import {
     getHomeList,
     getUserInfo,
-    getArticledetails,
+    getDetailsData,
     collection,
     nocollection,
     login
@@ -69,9 +69,9 @@ export const GET_USERINFO = (name) =>{
 }
 
 // 获取文章详情
-export const GET_ARTICLE = (id) => {
+export const GET_ARTICLE = (id,accesstoken) => {
     return async (dispatch) => {
-        await getArticledetails(id).then((res) => {
+        await getDetailsData(id,accesstoken).then((res) => {
             return res.json()
         }).then((resJson) => {
             dispatch({
@@ -84,9 +84,9 @@ export const GET_ARTICLE = (id) => {
 
 
 //收藏
-export const POST_COLLECT = (token,id) =>{
+export const POST_COLLECT = (id,accesstoken) =>{
     return async (dispatch) =>{
-        await collection(token,id).then((res) =>{
+        await collection(id,accesstoken).then((res) =>{
             return res.json()
         }).then((resJson) =>{
             dispatch({
@@ -98,9 +98,9 @@ export const POST_COLLECT = (token,id) =>{
 }
 
 //取消收藏
-export const POST_NOCOLLECT = (token,id) =>{
+export const POST_NOCOLLECT = (id,accesstoken) =>{
     return async (dispatch) =>{
-        await nocollection(token,id).then((res) =>{
+        await nocollection(id,accesstoken).then((res) =>{
             return res.json()
         }).then((resJson) =>{
             dispatch({

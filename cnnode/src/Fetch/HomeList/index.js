@@ -11,8 +11,9 @@ export function getUserInfo(name){
     return result
 }
 
-export function getArticledetails(id){
-    var result = get('https://cnodejs.org/api/v1/topic/'+id);
+export function getDetailsData(id, accesstoken) {
+    var accesstoken = accesstoken || ''
+    var result = get('https://cnodejs.org/api/v1/topic/' + id + '?accesstoken=' + accesstoken);
     return result
 }
 

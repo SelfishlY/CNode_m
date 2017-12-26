@@ -6,8 +6,8 @@ class Collection extends Component {
         return (
             <div>
                 {
-                    this.props.col
-                        ? <button className="float-right" >取消收藏</button>
+                    this.props.iscollect
+                        ? <button className="float-right" onClick={this.props.nocollect}>取消收藏</button>
                         : <button className="float-right" onClick={this.props.collect}>收藏</button>
                 }
             </div>

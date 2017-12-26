@@ -14,13 +14,13 @@ class HeaderNav extends Component{
                             <Link to="/">首页</Link>
                             <Link to="login">新手</Link>
                             <Link to="login">关于</Link>
-                            <Link to="login">登录</Link>
+                            <a>退出</a>
                         </div>
                     :   <div className="HeaderNav">
                             <Link to="/">首页</Link>
                             <Link to="login">新手</Link>
                             <Link to="login">关于</Link>
-                            <a>退出</a>
+                            <Link to="login">登录</Link>
                         </div>
                 }
             </div>

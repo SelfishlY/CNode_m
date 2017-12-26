@@ -6,7 +6,7 @@ import Collection from '../Collection/index'
 class DetailsCom extends Component {
 
     render() {
-        console.log(this.props.data)
+        // console.log(this.props.data)
         const data = this.props.data;
         return (
             <div className="detailsCom">
@@ -14,7 +14,7 @@ class DetailsCom extends Component {
                 <div className="details-title">
                     <h2>
                         <Star top={data.top} good={data.good} tab={data.tab}/>
-                        <Collection col={data.is_collect} collect={this.props.collect}/>
+                        <Collection iscollect={this.props.iscollect} nocollect={this.props.nocollect} collect={this.props.collect}/>
                     </h2>
                     <div>
                         <span>发布于{data.create_at}</span>·
