@@ -4,7 +4,8 @@ import {
     getUserInfo,
     getArticledetails,
     collection,
-    nocollection
+    nocollection,
+    login
 } from '../../Fetch/HomeList/index';
 
 
@@ -105,6 +106,24 @@ export const POST_NOCOLLECT = (token,id) =>{
             dispatch({
                 type:ActionType.POST_NOCOLLECT,
                 data: resJson.data
+            })
+        })
+    }
+}
+
+
+// 登录
+export const LOGIN = (token) =>{
+    return async(dispatch) =>{
+        await login(token).then((res) =>{
+            return res.json()
+        }).then((resJson) =>{
+            localStorage.loginname = resJson.loginname
+            localStorage.cnodeId = resJson.id
+            localStorage.avatar_url = resJson.avatar_url
+            dispatch({
+                type:ActionType.LOGIN,
+                data:resJson
             })
         })
     }

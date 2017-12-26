@@ -1,0 +1,45 @@
+.login {
+    background: #444444;
+    height: 78%;
+    .login-title {
+        text-align: center;
+        color: #FFFF99;
+        font-size: 26px;
+    }
+    .login-btn {
+        padding: 0 10px;
+        text-align: center;
+        padding-top: 138px;
+        span {
+            color: #ffffff;
+            font-size: 25px;
+        }
+        input {
+            border: 0;
+            height: 30px;
+            font-size: 25px;
+            background: #444444;
+            color: #ffffff;
+            border-bottom: 1px solid #ffffff;
+            margin-left: 10px;
+        }
+        .caveat {
+            color: red;
+            display: block;
+            margin-left: 52px;
+            margin-top: 7px;
+        }
+        button {
+            border: 0;
+            background: #00CCCC;
+            color: #ffffff;
+            padding: 10px 10px;
+            border-radius: 4px;
+            margin-top: 40px;
+            font-size: 26px;
+        }
+        .erweima {
+            margin-right: 70px;
+        }
+    }
+}

@@ -25,3 +25,8 @@ export function nocollection(paramsObj) {
     const result = post('https://cnodejs.org/api/v1/topic_collect/de_collect', paramsObj);
     return result
 }
+
+export function login(token) {
+    const result = post('https://cnodejs.org/api/v1/accesstoken', token);
+    return result
+}

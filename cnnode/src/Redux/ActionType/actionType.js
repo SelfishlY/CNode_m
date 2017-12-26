@@ -6,3 +6,4 @@ export const GET_USERINFO = 'GET_USERINFO';    //获取用户信息
 export const GET_ARTICLE = 'GET_ARTICLE';     //获取文章详情
 export const POST_COLLECT = 'POST_COLLECT';   //收藏主题
 export const POST_NOCOLLECT = 'POST_NOCOLLECT';   //取消收藏主题
+export const LOGIN = 'LOGIN';  //登录

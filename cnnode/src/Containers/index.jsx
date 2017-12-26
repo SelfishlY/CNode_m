@@ -14,7 +14,7 @@ class App extends Component{
     render(){
         return(
             <HashRouter history={this.props.history}>
-            <div>
+            <div className="box" style={{'height':'100%'}}>
                 <Header/>
                 <Route exact path="/" component={Home} />
                 <Route path="/login" component={Login} />

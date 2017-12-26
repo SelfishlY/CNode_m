@@ -1,14 +1,28 @@
 import React,{Component} from 'react';
+import {Link} from 'react-router-dom';
 
 class HeaderNav extends Component{
     render(){
+        const loginname = localStorage.loginname;
+        const id = localStorage.cnodeId;
+        const img = localStorage.avatar_url
         return(
-            <div className="HeaderNav">
-                <a href="">首页</a>
-                <a href="">首页</a>
-                <a href="">首页</a>
-                <a href="">首页</a>
-                <a href="">首页</a>
+            <div>
+                {
+                    loginname && id && img
+                    ?   <div className="HeaderNav">   
+                            <Link to="/">首页</Link>
+                            <Link to="login">新手</Link>
+                            <Link to="login">关于</Link>
+                            <Link to="login">登录</Link>
+                        </div>
+                    :   <div className="HeaderNav">
+                            <Link to="/">首页</Link>
+                            <Link to="login">新手</Link>
+                            <Link to="login">关于</Link>
+                            <a>退出</a>
+                        </div>
+                }
             </div>
         )
     }
