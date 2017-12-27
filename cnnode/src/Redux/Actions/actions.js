@@ -5,7 +5,8 @@ import {
     getDetailsData,
     collection,
     nocollection,
-    login
+    login,
+    zan
 } from '../../Fetch/HomeList/index';
 
 
@@ -124,6 +125,31 @@ export const LOGIN = (token) =>{
             dispatch({
                 type:ActionType.LOGIN,
                 data:resJson
+            })
+        })
+    }
+}
+
+// 用户退出
+export const USER_EXIT = (data) =>{
+    localStorage.clear()
+    window.location.reload() 
+    return{
+        type:ActionType.USER_EXIT,
+        data
+    }
+}
+
+// 点赞与取消点赞
+
+export const DIAN_ZAN = (accesstoken,id) =>{
+    return async (dispatch) =>{
+        await zan(accesstoken,id).then((res) =>{
+            return res.json()
+        }).then((resJson) =>{
+            dispatch({
+                type:ActionType.DIAN_ZAN,
+                data:resJson.action
             })
         })
     }

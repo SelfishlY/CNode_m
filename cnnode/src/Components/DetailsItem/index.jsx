@@ -3,10 +3,10 @@ import Star from '../../Components/Star/index';
 import './style.css';
 import Collection from '../Collection/index'
 
+
 class DetailsCom extends Component {
 
     render() {
-        // console.log(this.props.data)
         const data = this.props.data;
         return (
             <div className="detailsCom">
@@ -29,6 +29,7 @@ class DetailsCom extends Component {
             </div>
         )
     }
+
 
 }
 

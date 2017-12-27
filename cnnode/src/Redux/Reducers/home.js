@@ -31,6 +31,8 @@ export default (state = initState, action) => {
                 HomeData: action.data,
                 tab: action.tab
             })
+        case ActionType.USER_EXIT:
+            return state
         default:
             return state
     }  

@@ -3,9 +3,9 @@ import {Link} from 'react-router-dom';
 
 class HeaderNav extends Component{
     render(){
-        const loginname = localStorage.loginname;
-        const id = localStorage.cnodeId;
-        const img = localStorage.avatar_url
+        const loginname = localStorage.loginname || '';
+        const id = localStorage.cnodeId || '';
+        const img = localStorage.avatar_url || '';
         return(
             <div>
                 {
@@ -14,7 +14,7 @@ class HeaderNav extends Component{
                             <Link to="/">首页</Link>
                             <Link to="login">新手</Link>
                             <Link to="login">关于</Link>
-                            <a>退出</a>
+                            <a onClick={this.props.exit}>退出</a>
                         </div>
                     :   <div className="HeaderNav">
                             <Link to="/">首页</Link>

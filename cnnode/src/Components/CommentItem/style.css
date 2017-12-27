@@ -1,0 +1,45 @@
+.comment-item {
+  padding-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #eeeeee;
+}
+
+.comment-item .imgbox {
+  width: 80px;
+  height: 80px;
+}
+
+.comment-item .imgbox img {
+  width: 100%;
+  height: 100%;
+}
+
+.comment-item .info {
+  margin-left: 40px;
+  font-size: 26px;
+}
+
+.comment-item .icon span {
+  margin-right: 30px;
+}
+
+.comment-item .icon span .icon-dianzan1 {
+  font-size: 40px;
+}
+
+.comment-item .icon span .iscolor {
+  color: red;
+}
+
+.comment-item .icon .icon-huifu2 {
+  font-size: 30px;
+}
+
+.comment-item .content {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.comment-item .content p {
+  font-size: 28px;
+}

@@ -31,3 +31,7 @@ export function login(token) {
     const result = post('https://cnodejs.org/api/v1/accesstoken', token);
     return result
 }
+export function zan(paramsObj,id) {
+    const result = post('https://cnodejs.org/api/v1/reply/' + id + '/ups', paramsObj);
+    return result
+}

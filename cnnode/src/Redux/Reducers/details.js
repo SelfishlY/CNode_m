@@ -18,6 +18,8 @@ export default (state={},action) =>{
             return Object.assign({},state,{
                 iscollect:false
             })
+        case ActionsType.DIAN_ZAN:
+            return state
         default:
             return state
     }

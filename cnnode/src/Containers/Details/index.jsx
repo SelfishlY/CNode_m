@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import * as Action from '../../Redux/Actions/actions';
 import DetailsItem from '../../Components/DetailsItem/index'
 import Loading from '../../Components/Loading/index';
+import Comment from './Comment/index'
 
 
 class Details extends Component {
@@ -14,7 +15,10 @@ class Details extends Component {
             <div>
                 {
                     data
-                        ? <DetailsItem data={data} iscollect={iscollect} collect={this.collect} nocollect={this.nocollect}/>
+                        ? <div>
+                            <DetailsItem data={data} iscollect={iscollect} collect={this.collect} nocollect={this.nocollect} />
+                            <Comment replies={data.replies}/>
+                          </div> 
                         : <Loading/>
                 }
             </div>
@@ -22,7 +26,6 @@ class Details extends Component {
     }
 
     componentDidMount(){
-        console.log(this.props.ArticleAction)
         const id = this.props.match.params.id
         const accesstoken = localStorage.Accesstoken || '';
         this.props.ArticleAction.GET_ARTICLE(id,accesstoken)

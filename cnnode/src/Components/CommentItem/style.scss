@@ -1,0 +1,38 @@
+.comment-item{
+    padding-top: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #eeeeee;
+    .imgbox{
+        width: 80px;
+        height: 80px; 
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .info{
+        margin-left: 40px;
+        font-size: 26px;
+    }
+    .icon{
+        span{
+            margin-right: 30px;
+            .icon-dianzan1 {
+                font-size: 40px;
+            }
+            .iscolor{
+                color: red
+            }
+        }
+        .icon-huifu2 {
+            font-size: 30px;
+        }
+    }
+    .content{
+        margin-top: 30px;
+        margin-bottom: 20px;
+        p{
+            font-size: 28px;
+        }
+    }
+}

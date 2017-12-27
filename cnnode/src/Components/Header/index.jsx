@@ -8,7 +8,7 @@ class Header extends Component{
         return(
             <div className="navbar">
                 <img src={logo} alt=""/>
-                <HeaderNav/>    
+                <HeaderNav exit={this.props.exit}/>    
             </div>
         )
     }

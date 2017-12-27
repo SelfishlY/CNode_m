@@ -6,16 +6,20 @@ import Login from './Login/index'
 import Details from './Details/index';
 import Header from '../Components/Header/index';
 import { HashRouter, Route} from 'react-router-dom'
+import {connect} from 'react-redux';
+import * as Actions from '../Redux/Actions/actions';
+import { bindActionCreators} from 'redux';
 import '../static/getType';
 import '../static/css/reset.css'
 
 
 class App extends Component{
     render(){
+        
         return(
             <HashRouter history={this.props.history}>
             <div className="box" style={{'height':'100%'}}>
-                <Header/>
+                <Header exit={this.props.UserAction.USER_EXIT}/>
                 <Route exact path="/" component={Home} />
                 <Route path="/login" component={Login} />
                 <Route path="/about" component={About} />
@@ -27,4 +31,14 @@ class App extends Component{
     }
 }
 
-export default App
+const mapStateToProps = (state) =>{
+    return{
+    }
+}
+const mapDispatchToProps = (dispatch) =>{
+    return{
+        UserAction: bindActionCreators(Actions,dispatch)
+    }
+}
+
+export default connect(null,mapDispatchToProps)(App)
