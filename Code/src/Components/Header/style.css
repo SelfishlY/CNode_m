@@ -1,7 +1,12 @@
 .navbar {
   background: #444;
-  height: 25%;
+  height: 167px;
   text-align: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 1;
+  z-index: 5;
 }
 
 .navbar img {
@@ -11,11 +16,11 @@
 
 .navbar .HeaderNav {
   margin-bottom: 15px;
-  margin-top: 40px;
   font-size: 28px;
 }
 
 .navbar .HeaderNav a {
   color: #fff;
   padding: 0 30px;
+  font-size: 35px;
 }

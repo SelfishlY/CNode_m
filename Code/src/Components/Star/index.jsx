@@ -7,7 +7,7 @@ class Star extends Component{
             <span className="HomeIcon">
                 {
                     this.props.top
-                        ? <i className="iconfont icon-zhiding1 zhiding"></i>
+                        ? <i className="iconfont icon-zhiding zhiding"></i>
                     : this.props.good
                             ? <i className="iconfont icon-jinghua jinghua"></i>
                     : this.props.tab === 'share'

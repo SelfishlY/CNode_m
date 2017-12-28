@@ -12,7 +12,7 @@ class Details extends Component {
         const data = this.props.Article.DetaileData
         const iscollect = this.props.Article.iscollect
         return (
-            <div>
+            <div className="detaile-box" style={{'margin-top':'185px'}}>
                 {
                     data
                         ? <div>

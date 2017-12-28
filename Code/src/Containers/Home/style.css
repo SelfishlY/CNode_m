@@ -1,13 +1,18 @@
-.listBox {
+.conent {
+  margin-top: 170px;
+}
+
+.conent .listBox {
   margin: 0 20px;
   background: #fff;
   border-radius: 6px;
 }
 
-.homenav li {
-  padding: 11px 0px;
+.conent .homenav li {
+  padding: 16px 0px;
   background: #6699FF;
   color: #fff;
   width: 16.666%;
   text-align: center;
+  font-size: 30px;
 }

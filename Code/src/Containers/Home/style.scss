@@ -1,16 +1,20 @@
+.conent{
+    margin-top: 170px;
+    .listBox {
+        margin: 0 20px;
+        background: #fff;
+        border-radius: 6px;
+    }
 
-.listBox{
-    margin: 0 20px;
-    background: #fff;
-    border-radius: 6px;
-}
-.homenav {
-    // margin: 15px 0;
-    li {
-        padding: 11px 0px;
-        background: #6699FF;
-        color: #fff;
-        width: 16.666%;
-        text-align: center;
+    .homenav {
+        // margin: 15px 0;
+        li {
+            padding: 16px 0px;
+            background: #6699FF;
+            color: #fff;
+            width: 16.666%;
+            text-align: center;
+            font-size: 30px;
+        }
     }
 }
