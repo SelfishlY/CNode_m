@@ -35,3 +35,7 @@ export function zan(paramsObj,id) {
     const result = post('https://cnodejs.org/api/v1/reply/' + id + '/ups', paramsObj);
     return result
 }
+export function posted(paramsObj) {
+    const result = post('https://cnodejs.org/api/v1/topics', paramsObj);
+    return result
+}

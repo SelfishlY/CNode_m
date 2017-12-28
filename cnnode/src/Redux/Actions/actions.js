@@ -6,7 +6,8 @@ import {
     collection,
     nocollection,
     login,
-    zan
+    zan,
+    posted
 } from '../../Fetch/HomeList/index';
 
 
@@ -150,6 +151,20 @@ export const DIAN_ZAN = (accesstoken,id) =>{
             dispatch({
                 type:ActionType.DIAN_ZAN,
                 data:resJson.action
+            })
+        })
+    }
+}
+
+// 发表文章
+export const POSTED = (paramsObj) =>{
+    return async (dispatch) =>{
+        await posted(paramsObj).then((res) =>{
+            return res.json()
+        }).then((resJson) =>{
+            dispatch({
+                type:ActionType.POSTED,
+                data: resJson.topic_id
             })
         })
     }

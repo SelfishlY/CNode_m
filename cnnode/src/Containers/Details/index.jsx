@@ -41,7 +41,7 @@ class Details extends Component {
     // 取消收藏
     nocollect = () =>{
         const accesstoken = localStorage.Accesstoken
-        const id = this.props.Article.DetaileData.id;
+        const id = this.props.Article.DetaileData.id;   
         this.props.ArticleAction.POST_NOCOLLECT({ topic_id: id, accesstoken: accesstoken })
     }
 

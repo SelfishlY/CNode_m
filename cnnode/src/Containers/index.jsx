@@ -5,6 +5,7 @@ import User from './User/index'
 import Login from './Login/index'
 import Details from './Details/index';
 import Header from '../Components/Header/index';
+import Posted from '../Containers/Posted/index';
 import { HashRouter, Route} from 'react-router-dom'
 import {connect} from 'react-redux';
 import * as Actions from '../Redux/Actions/actions';
@@ -25,6 +26,7 @@ class App extends Component{
                 <Route path="/about" component={About} />
                 <Route path="/user/:name" component={User}/>
                 <Route path="/details/:id" component={Details}/>
+                <Route path="/posted" component={Posted}/>
             </div>
             </HashRouter>
         )

@@ -7,7 +7,9 @@ class CommentItem extends Component {
         super(props)
         this.state={
             isdianzan :'',
-            zan_len: ''
+            zan_len: '',
+            ishuifu: false,
+            value:''
         }
     }
     render() {
@@ -40,12 +42,20 @@ class CommentItem extends Component {
                             }
                             {this.state.zan_len}
                         </span>
-                        <i className="iconfont icon-huifu2"></i>
+                        <i className="iconfont icon-huifu2" onClick={this.display_huifu}></i>
                     </div>
                 </div>
                 <div className="content">
                     <p dangerouslySetInnerHTML={{ __html: content }}></p>
                 </div>
+                {
+                    this.state.ishuifu
+                        ? <div className="huifu">
+                            <div className="content" contentEditable="true">{this.state.value}</div>
+                            <button>回复</button>
+                        </div>
+                        : ''
+                }
             </div>
         )
     }
@@ -74,6 +84,13 @@ class CommentItem extends Component {
         this.setState({
             isdianzan :this.props.replies.is_uped,
             zan_len: this.props.replies.ups.length
+        })
+    }
+
+    display_huifu = () =>{
+        this.setState({
+            ishuifu: !this.state.ishuifu,
+            value: '@'+this.props.replies.author.loginname
         })
     }
 }

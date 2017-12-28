@@ -1,0 +1,26 @@
+.posted{
+    padding: 0 30px;
+    border: 1px solid #eeeeee;
+    .success {
+        font-size: 30px;
+        text-align: center;
+    }
+    .content_title{
+        height: 60px;
+        font-size: 25px;
+        border: 1px solid black;
+        line-height: 25px;
+    }
+    select{
+        border: 1px solid red;
+        width: 100px;
+        height: 50px;
+        font-size: 25px;
+    }
+    .content_box{
+        width: 100%;
+        height: 300px;
+        border: 1px solid #eeeeee;
+        font-size: 25px;
+    }
+}

@@ -9,3 +9,4 @@ export const POST_NOCOLLECT = 'POST_NOCOLLECT';   //取消收藏主题
 export const LOGIN = 'LOGIN';  //登录
 export const USER_EXIT = 'USER_EXIT'; //退出
 export const DIAN_ZAN = 'DIAN_ZAN';  //点赞 
+export const POSTED = 'POSTED';  //发表文章

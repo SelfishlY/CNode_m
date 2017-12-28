@@ -14,6 +14,7 @@ class HeaderNav extends Component{
                             <Link to="/">首页</Link>
                             <Link to="login">新手</Link>
                             <Link to="login">关于</Link>
+                            <Link to="posted">发布</Link>
                             <a onClick={this.props.exit}>退出</a>
                         </div>
                     :   <div className="HeaderNav">
