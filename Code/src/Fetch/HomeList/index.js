@@ -39,3 +39,7 @@ export function posted(paramsObj) {
     const result = post('https://cnodejs.org/api/v1/topics', paramsObj);
     return result
 }
+export function reply(paramsObj, topic_id) {
+    const result = post('https://cnodejs.org/api/v1/topic/' +topic_id+'/replies', paramsObj);
+    return result
+}

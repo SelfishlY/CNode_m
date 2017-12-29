@@ -10,3 +10,4 @@ export const LOGIN = 'LOGIN';  //登录
 export const USER_EXIT = 'USER_EXIT'; //退出
 export const DIAN_ZAN = 'DIAN_ZAN';  //点赞 
 export const POSTED = 'POSTED';  //发表文章
+export const POST_REPLY = 'POST_REPLY'; //文章评论 

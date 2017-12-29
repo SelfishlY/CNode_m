@@ -4,7 +4,8 @@ import Home from './home';
 import UserInfo from './userinfo'; 
 import Detailes from './details'
 import Login from './login';
-import Posted from './posted'
+import Posted from './posted';
+import Reply from './reply';
 
 
 
@@ -13,7 +14,8 @@ export default combineReducers({
     UserInfo,
     Detailes,
     Login,
-    Posted
+    Posted,
+    Reply
 });
   
   

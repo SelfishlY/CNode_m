@@ -14,7 +14,7 @@ class Posted extends Component {
             <div className="posted">
                 {
                     this.props.PostedData.Posted.id
-                        ? <div className="success"><Link to={"/details/:"+id}>发表成功,点击跳转到文章页面</Link></div>
+                        ? <div className="success"><Link to={"/details/"+id}>发表成功,点击跳转到文章页面</Link></div>
                     : <div>
                         <h2>标题:</h2>
                         <input className="content_title" onChange={this.titleClick} ref="title" />

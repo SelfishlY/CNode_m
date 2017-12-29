@@ -7,7 +7,8 @@ import {
     nocollection,
     login,
     zan,
-    posted
+    posted,
+    reply
 } from '../../Fetch/HomeList/index';
 
 
@@ -165,6 +166,21 @@ export const POSTED = (paramsObj) =>{
             dispatch({
                 type:ActionType.POSTED,
                 data: resJson.topic_id
+            })
+        })
+    }
+}
+
+// 文章评论
+export const POST_REPLY = (paramsObj,id) =>{
+    return async (dispatch) =>{
+        await reply(paramsObj,id).then((res) =>{
+            return res.json()
+        }).then((resJson) =>{
+            console.log(resJson)
+            dispatch({
+                type:ActionType.POST_REPLY,
+                data: resJson
             })
         })
     }

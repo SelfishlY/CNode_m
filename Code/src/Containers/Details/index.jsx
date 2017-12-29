@@ -5,6 +5,8 @@ import * as Action from '../../Redux/Actions/actions';
 import DetailsItem from '../../Components/DetailsItem/index'
 import Loading from '../../Components/Loading/index';
 import Comment from './Comment/index'
+import './style.css'
+import Reply from '../Reply/index';
 
 
 class Details extends Component {
@@ -12,12 +14,13 @@ class Details extends Component {
         const data = this.props.Article.DetaileData
         const iscollect = this.props.Article.iscollect
         return (
-            <div className="detaile-box" style={{'margin-top':'185px'}}>
+            <div className="detaile-box" style={{'marginTop':'185px'}}>
                 {
                     data
                         ? <div>
                             <DetailsItem data={data} iscollect={iscollect} collect={this.collect} nocollect={this.nocollect} />
                             <Comment replies={data.replies}/>
+                            <Reply data={data}/>
                           </div> 
                         : <Loading/>
                 }
